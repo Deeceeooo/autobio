@@ -1,0 +1,39 @@
+body {
+  background: #4540DB;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #333;
+}
+
+.profile-img {
+  max-width: 100%;
+  height: auto;
+  padding: 6px;
+  background: linear-gradient(135deg, #2ab0d8, #ff6ec4);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(42, 176, 216, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 110, 196, 0.7);
+}
+
+.text-section {
+  background-color: #ffffffcc;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

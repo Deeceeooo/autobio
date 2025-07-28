@@ -11,10 +11,12 @@
 
   <div class="container py-5">
     <div class="row align-items-center fade-in">
+
       <!-- Image Section -->
-      <div class="col-md-4 mb-4 mb-md-0 text-center">
-        <img src="image.jpeg" alt="My Photo" class="img-fluid rounded-circle profile-img" />
-      </div>
+<div class="col-md-4 mb-4 mb-md-0 text-center position-relative">
+  <div class="spinner-border text-primary cute-spinner" role="status" id="img-loader"></div>
+  <img src="image.jpeg" alt="My Photo" class="img-fluid rounded-circle profile-img d-none" id="profile-img" />
+</div>
 
       <!-- Text Section -->
       <div class="col-md-8 text-section">
@@ -37,7 +39,25 @@
     window.addEventListener("DOMContentLoaded", () => {
       document.querySelector(".fade-in").classList.add("visible");
     });
-  </script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const img = document.getElementById("profile-img");
+    const loader = document.getElementById("img-loader");
+
+    img.onload = () => {
+      loader.style.display = "none";
+      img.classList.remove("d-none");
+      img.classList.add("loaded");
+    };
+
+    // Force load if image already cached
+    if (img.complete) {
+      img.onload();
+    }
+
+    // Fade-in text
+    document.querySelector(".fade-in").classList.add("visible");
+  });
+</script>
 
 </body>
 </html>

@@ -35,3 +35,41 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Spinner style */
+.cute-spinner {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1.5rem 0 0 -1.5rem;
+  z-index: 1;
+  animation: pop 0.8s ease-in-out infinite;
+  color: #ff8da7;
+}
+
+/* Cute pulse animation */
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Profile image fade-in */
+.profile-img {
+  max-width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 5px solid #f8bbd0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.5s ease, transform 0.3s ease;
+  opacity: 0;
+}
+
+.profile-img.loaded {
+  opacity: 1;
+}
